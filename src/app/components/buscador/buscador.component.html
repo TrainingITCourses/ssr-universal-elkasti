@@ -1,0 +1,18 @@
+<div class="buscador">
+  <div>
+    <label>Filtrar por</label>
+    <select (change)="campo($event)" class="margen">
+      <option [value]=0> </option>
+      <option [value]=1> Misión</option>
+      <option [value]=2> Agencia</option>
+      <option [value]=3> Estado</option>
+    </select>
+  </div>
+  
+  <div class="margen" *ngIf="criterio.campo">
+    <select id="mision" (change)="buscar($event)">
+      <option value=""></option>
+      <option *ngFor="let item of lista" [value]="item.id">{{item.name}}</option>
+    </select>
+  </div>
+</div>
